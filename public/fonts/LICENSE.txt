@@ -1,0 +1,3 @@
+adventor-bold.woff is a subset of TeX Gyre Adventor, (c) GUST e-foundry, GUST Font License (https://www.gust.org.pl/projects/e-foundry/tex-gyre).
+inter-*.woff are subsets of Inter, (c) The Inter Project Authors, SIL Open Font License 1.1 (https://openfontlicense.org).
+glyphs.woff is original to Empire City.
