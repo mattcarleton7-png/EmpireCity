@@ -1,0 +1,9 @@
+{
+  "name": "empire-city",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Empire City - open-world driving and card game with Empire Mobile Casino on the phone",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
