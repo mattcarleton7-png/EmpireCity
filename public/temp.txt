@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Empire City</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="description" content="A shared open city in your browser. Drive, gamble, trade and collect with your friends.">
+<meta name="theme-color" content="#12172B">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Empire City">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-64.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preload" href="fonts/glyphs.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/adventor-bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/inter-semibold.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/empire.css">
+<link rel="stylesheet" href="css/palace.css">
+</head>
+<body>
+<div id="boot"><svg class="wm" viewBox="0 0 414 206" role="img" aria-label="Empire City"><defs><linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC6"/><stop offset=".52" stop-color="#E7BE6E"/><stop offset="1" stop-color="#B98A3E"/></linearGradient></defs><g fill="url(#bg1)"><path d="M0 0h24v100H0zM24 0h30v5H24zM24 47h24v5H24zM24 95h30v5H24z"/><path d="M68 0h5v100h-5zM73 0h15l24 70-6 18zM118 0h6l-20 60-3-9zM124 0h24v100h-24z"/><path d="M162 0h24v100h-24zM186 0h12c17 0 30 11 30 28s-13 29-30 29h-12v-5h7c9 0 13-11 13-24s-4-23-13-23h-7z"/><path d="M242 0h24v100h-24z"/><path d="M280 0h24v100h-24zM304 0h12c16 0 28 10 28 26 0 13-8 22-21 25l24 49h-26l-22-47h-1v-4h8c8 0 12-10 12-23s-4-21-12-21h-4z"/><path d="M360 0h24v100h-24zM384 0h30v5h-30zM384 47h24v5h-24zM384 95h30v5h-30z"/></g><g fill="#12172B" opacity=".55"><rect x="10.5" y="8" width="3" height="84"/><rect x="134.5" y="8" width="3" height="84"/><rect x="172.5" y="8" width="3" height="84"/><rect x="252.5" y="8" width="3" height="84"/><rect x="290.5" y="8" width="3" height="84"/><rect x="370.5" y="8" width="3" height="84"/></g><g fill="url(#bg1)" transform="translate(-48.5 0)"><path d="M140 160c0-24 14-44 40-44 9 0 15 2 20 5v15h-3c-3-10-9-16-17-16-11 0-15 18-15 40s4 40 15 40c8 0 14-6 17-16h3v15c-5 3-11 5-20 5-26 0-40-20-40-44z"/><path d="M212 118h22v86h-22z"/><path d="M244 118h66v4h-22v82h-22v-82h-22z"/><path d="M314 118h24l15 38 13-38h5l-17 48v38h-22v-38z"/></g><g fill="url(#bg1)"><path d="M0 121h78v2.5H0zM336 121h78v2.5h-78zM0 198.5h78v2.5H0zM336 198.5h78v2.5h-78z"/><path d="M58 161l20-14v28zM18 161l-18-14v28zM356 161l-20-14v28zM396 161l18-14v28z" opacity=".95"/></g></svg><div class="pr"><u id="bootBar"></u></div><p id="bootMsg">Loading</p><button id="bootRetry" onclick="location.reload()">Try again</button></div>
+
+<div id="st" class="intro">
+  <canvas id="c"></canvas>
+  <div class="hud" id="zone"></div>
+  <div class="hud" id="coins"></div>
+  <button class="hud" id="phBtn" aria-label="Phone"><span class="g">&#xE001;</span></button>
+  <div class="hud" id="lvl"></div>
+  <div class="hud" id="clk"></div>
+  <div class="hud" id="wp"></div>
+  <div class="hud" id="toast"></div>
+  <div class="hud" id="quest"></div>
+  <div id="flash"></div>
+
+  <div id="phone">
+    <div id="phTop"><button id="phHome" class="plq"></button><span id="phTitle">Phone</span><span id="phBal" class="plq"></span><button id="phX" class="plq" aria-label="Close phone"><span class="g">&#xE00F;</span></button></div>
+    <div id="phNav"></div>
+    <div id="phBody"></div>
+    <div id="fade"></div>
+  <div id="ecWrap"><div id="ecLoad">Opening Empire Mobile Casino</div><iframe id="ecFrame" title="Empire Mobile Casino" allow="autoplay"></iframe></div>
+  </div>
+
+
+  <div id="login">
+    <div class="lk"><svg class="wm" viewBox="0 0 414 206" role="img" aria-label="Empire City"><defs><linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC6"/><stop offset=".52" stop-color="#E7BE6E"/><stop offset="1" stop-color="#B98A3E"/></linearGradient></defs><g fill="url(#bg2)"><path d="M0 0h24v100H0zM24 0h30v5H24zM24 47h24v5H24zM24 95h30v5H24z"/><path d="M68 0h5v100h-5zM73 0h15l24 70-6 18zM118 0h6l-20 60-3-9zM124 0h24v100h-24z"/><path d="M162 0h24v100h-24zM186 0h12c17 0 30 11 30 28s-13 29-30 29h-12v-5h7c9 0 13-11 13-24s-4-23-13-23h-7z"/><path d="M242 0h24v100h-24z"/><path d="M280 0h24v100h-24zM304 0h12c16 0 28 10 28 26 0 13-8 22-21 25l24 49h-26l-22-47h-1v-4h8c8 0 12-10 12-23s-4-21-12-21h-4z"/><path d="M360 0h24v100h-24zM384 0h30v5h-30zM384 47h24v5h-24zM384 95h30v5h-30z"/></g><g fill="#12172B" opacity=".55"><rect x="10.5" y="8" width="3" height="84"/><rect x="134.5" y="8" width="3" height="84"/><rect x="172.5" y="8" width="3" height="84"/><rect x="252.5" y="8" width="3" height="84"/><rect x="290.5" y="8" width="3" height="84"/><rect x="370.5" y="8" width="3" height="84"/></g><g fill="url(#bg2)" transform="translate(-48.5 0)"><path d="M140 160c0-24 14-44 40-44 9 0 15 2 20 5v15h-3c-3-10-9-16-17-16-11 0-15 18-15 40s4 40 15 40c8 0 14-6 17-16h3v15c-5 3-11 5-20 5-26 0-40-20-40-44z"/><path d="M212 118h22v86h-22z"/><path d="M244 118h66v4h-22v82h-22v-82h-22z"/><path d="M314 118h24l15 38 13-38h5l-17 48v38h-22v-38z"/></g><g fill="url(#bg2)"><path d="M0 121h78v2.5H0zM336 121h78v2.5h-78zM0 198.5h78v2.5H0zM336 198.5h78v2.5h-78z"/><path d="M58 161l20-14v28zM18 161l-18-14v28zM356 161l-20-14v28zM396 161l18-14v28z" opacity=".95"/></g></svg><p id="lgSub"></p></div>
+    <div class="card">
+      <div class="tabs"><button id="tbIn">Log in</button><button id="tbNew">Create account</button></div>
+      <label class="fld"><input type="text" id="lgUser" aria-label="Username" placeholder="Username" maxlength="16" autocapitalize="off" autocomplete="username" spellcheck="false"></label>
+      <label class="fld"><input type="password" id="lgPass" aria-label="Password" placeholder="Password" maxlength="40" autocomplete="current-password"></label>
+      <label class="kp"><input type="checkbox" id="lgKeep" checked> Keep me signed in</label>
+      <button class="go" id="lgGo">Log in</button>
+      <div class="msg" id="lgMsg"></div>
+      <div id="lgCloud"></div>
+      <button class="lnk" id="lgGuest">Play as a guest</button>
+    </div>
+  </div>
+  <div id="fx"></div>
+
+  <div id="intro"><div class="lbx t"></div><div class="lbx u"></div><div id="logo"><svg class="wm" viewBox="0 0 414 206" role="img" aria-label="Empire City"><defs><linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFC6"/><stop offset=".52" stop-color="#E7BE6E"/><stop offset="1" stop-color="#B98A3E"/></linearGradient></defs><g fill="url(#bg3)"><path d="M0 0h24v100H0zM24 0h30v5H24zM24 47h24v5H24zM24 95h30v5H24z"/><path d="M68 0h5v100h-5zM73 0h15l24 70-6 18zM118 0h6l-20 60-3-9zM124 0h24v100h-24z"/><path d="M162 0h24v100h-24zM186 0h12c17 0 30 11 30 28s-13 29-30 29h-12v-5h7c9 0 13-11 13-24s-4-23-13-23h-7z"/><path d="M242 0h24v100h-24z"/><path d="M280 0h24v100h-24zM304 0h12c16 0 28 10 28 26 0 13-8 22-21 25l24 49h-26l-22-47h-1v-4h8c8 0 12-10 12-23s-4-21-12-21h-4z"/><path d="M360 0h24v100h-24zM384 0h30v5h-30zM384 47h24v5h-24zM384 95h30v5h-30z"/></g><g fill="#12172B" opacity=".55"><rect x="10.5" y="8" width="3" height="84"/><rect x="134.5" y="8" width="3" height="84"/><rect x="172.5" y="8" width="3" height="84"/><rect x="252.5" y="8" width="3" height="84"/><rect x="290.5" y="8" width="3" height="84"/><rect x="370.5" y="8" width="3" height="84"/></g><g fill="url(#bg3)" transform="translate(-48.5 0)"><path d="M140 160c0-24 14-44 40-44 9 0 15 2 20 5v15h-3c-3-10-9-16-17-16-11 0-15 18-15 40s4 40 15 40c8 0 14-6 17-16h3v15c-5 3-11 5-20 5-26 0-40-20-40-44z"/><path d="M212 118h22v86h-22z"/><path d="M244 118h66v4h-22v82h-22v-82h-22z"/><path d="M314 118h24l15 38 13-38h5l-17 48v38h-22v-38z"/></g><g fill="url(#bg3)"><path d="M0 121h78v2.5H0zM336 121h78v2.5h-78zM0 198.5h78v2.5H0zM336 198.5h78v2.5h-78z"/><path d="M58 161l20-14v28zM18 161l-18-14v28zM356 161l-20-14v28zM396 161l18-14v28z" opacity=".95"/></g></svg><p>Drive it, gamble it, trade it, own it. One shared city, live with your friends.</p><button id="playBtn">Enter the city</button></div><div id="cap"></div></div>
+
+  <div id="mapov"><div class="mw"><canvas id="mcv"></canvas></div><div id="mlist"></div></div>
+  <div class="hud" id="mm"><canvas id="mc" width="232" height="232"></canvas><span class="n">N</span></div>
+  <div class="hud" id="spd"></div>
+  <div class="hud" id="hint"></div>
+  <div class="hud" id="help"></div>
+  <div id="joy"><div id="knob"></div></div>
+  <button class="b" id="bJump" data-k="jump" aria-label="Jump"></button>
+  <button class="b" id="bSpr" data-k="spr" aria-label="Sprint"></button>
+  <button class="b" id="bAct" data-k="act">Enter</button>
+  <button class="b" id="bBrk" data-k="brk" aria-label="Drift"></button>
+  <button class="b" id="bCam" data-k="cam" aria-label="Change view"></button>
+  <div id="keys"><span><b>WASD</b> move</span><span><b>Shift</b> sprint</span><span><b>Space</b> jump or drift</span><span><b>E</b> enter</span><span><b>C</b> view</span><span><b>Enter</b> chat</span></div>
+</div>
+<script src="js/boot.js"></script>
+</body>
+</html>
+{"name":"Empire City","short_name":"Empire City","description":"A shared open city in your browser. Drive, gamble, trade and collect with your friends.","start_url":"/","display":"fullscreen","orientation":"landscape","background_color":"#12172B","theme_color":"#12172B","icons":[{"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png"},{"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png"},{"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}]}
